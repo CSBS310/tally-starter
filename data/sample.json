@@ -1,0 +1,372 @@
+{
+  "members": [
+    {
+      "id": "m-priya",
+      "name": "Priya",
+      "joinedOn": "2026-09-01"
+    },
+    {
+      "id": "m-marcus",
+      "name": "Marcus",
+      "joinedOn": "2026-09-01"
+    },
+    {
+      "id": "m-jun",
+      "name": "Jun",
+      "joinedOn": "2026-09-01"
+    },
+    {
+      "id": "m-elena",
+      "name": "Elena",
+      "joinedOn": "2026-09-01"
+    },
+    {
+      "id": "m-theo",
+      "name": "Theo",
+      "joinedOn": "2026-09-15"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "e-01",
+      "payerId": "m-priya",
+      "description": "September rent",
+      "amountCents": 260000,
+      "paidOn": "2026-09-01",
+      "category": "rent",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-priya",
+          "m-marcus",
+          "m-jun",
+          "m-elena"
+        ]
+      }
+    },
+    {
+      "id": "e-02",
+      "payerId": "m-marcus",
+      "description": "Move-in groceries, Franklin Market",
+      "amountCents": 18743,
+      "paidOn": "2026-09-02",
+      "category": "groceries",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-priya",
+          "m-marcus",
+          "m-jun",
+          "m-elena"
+        ]
+      }
+    },
+    {
+      "id": "e-03",
+      "payerId": "m-elena",
+      "description": "Shower curtain, mop, dish rack",
+      "amountCents": 6418,
+      "paidOn": "2026-09-06",
+      "category": "household",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-priya",
+          "m-marcus",
+          "m-jun",
+          "m-elena"
+        ]
+      }
+    },
+    {
+      "id": "e-04",
+      "payerId": "m-marcus",
+      "description": "Internet, September",
+      "amountCents": 7999,
+      "paidOn": "2026-09-12",
+      "category": "utilities",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-priya",
+          "m-marcus",
+          "m-jun",
+          "m-elena"
+        ]
+      }
+    },
+    {
+      "id": "e-05",
+      "payerId": "m-priya",
+      "description": "Theo's first week of groceries (he paid half back in cash)",
+      "amountCents": 5200,
+      "paidOn": "2026-09-19",
+      "category": "groceries",
+      "split": {
+        "kind": "percent",
+        "shares": [
+          {
+            "memberId": "m-theo",
+            "percent": 50
+          },
+          {
+            "memberId": "m-priya",
+            "percent": 50
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-06",
+      "payerId": "m-elena",
+      "description": "Pizza for the house meeting",
+      "amountCents": 4735,
+      "paidOn": "2026-09-23",
+      "category": "fun",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-priya",
+          "m-marcus",
+          "m-jun",
+          "m-elena",
+          "m-theo"
+        ]
+      }
+    },
+    {
+      "id": "e-07",
+      "payerId": "m-priya",
+      "description": "October rent",
+      "amountCents": 260000,
+      "paidOn": "2026-10-01",
+      "category": "rent",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-priya",
+          "m-marcus",
+          "m-jun",
+          "m-elena",
+          "m-theo"
+        ]
+      }
+    },
+    {
+      "id": "e-08",
+      "payerId": "m-theo",
+      "description": "Costco run",
+      "amountCents": 21360,
+      "paidOn": "2026-10-04",
+      "category": "groceries",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-priya",
+          "m-marcus",
+          "m-jun",
+          "m-elena",
+          "m-theo"
+        ]
+      }
+    },
+    {
+      "id": "e-09",
+      "payerId": "m-marcus",
+      "description": "Electricity, September",
+      "amountCents": 11286,
+      "paidOn": "2026-10-08",
+      "category": "utilities",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-priya",
+          "m-marcus",
+          "m-jun",
+          "m-elena",
+          "m-theo"
+        ]
+      }
+    },
+    {
+      "id": "e-10",
+      "payerId": "m-marcus",
+      "description": "Internet, October",
+      "amountCents": 7999,
+      "paidOn": "2026-10-12",
+      "category": "utilities",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-priya",
+          "m-marcus",
+          "m-jun",
+          "m-elena",
+          "m-theo"
+        ]
+      }
+    },
+    {
+      "id": "e-11",
+      "payerId": "m-elena",
+      "description": "Vacuum cleaner (Jun and Elena share the upstairs)",
+      "amountCents": 14999,
+      "paidOn": "2026-10-15",
+      "category": "household",
+      "split": {
+        "kind": "exact",
+        "shares": [
+          {
+            "memberId": "m-elena",
+            "cents": 7500
+          },
+          {
+            "memberId": "m-jun",
+            "cents": 7499
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-12",
+      "payerId": "m-theo",
+      "description": "Timbers tickets, four of us",
+      "amountCents": 15200,
+      "paidOn": "2026-10-18",
+      "category": "fun",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-theo",
+          "m-marcus",
+          "m-jun",
+          "m-priya"
+        ]
+      }
+    },
+    {
+      "id": "e-13",
+      "payerId": "m-priya",
+      "description": "Weekly groceries",
+      "amountCents": 9647,
+      "paidOn": "2026-10-24",
+      "category": "groceries",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-priya",
+          "m-marcus",
+          "m-jun",
+          "m-elena",
+          "m-theo"
+        ]
+      }
+    },
+    {
+      "id": "e-14",
+      "payerId": "m-elena",
+      "description": "Halloween party supplies",
+      "amountCents": 6230,
+      "paidOn": "2026-10-30",
+      "category": "fun",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-priya",
+          "m-marcus",
+          "m-jun",
+          "m-elena",
+          "m-theo"
+        ]
+      }
+    },
+    {
+      "id": "e-15",
+      "payerId": "m-marcus",
+      "description": "November rent (Marcus covered it this month)",
+      "amountCents": 260000,
+      "paidOn": "2026-11-01",
+      "category": "rent",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-priya",
+          "m-marcus",
+          "m-jun",
+          "m-elena",
+          "m-theo"
+        ]
+      }
+    },
+    {
+      "id": "e-16",
+      "payerId": "m-marcus",
+      "description": "Water and sewer, Sep-Oct",
+      "amountCents": 16466,
+      "paidOn": "2026-11-05",
+      "category": "utilities",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-priya",
+          "m-marcus",
+          "m-jun",
+          "m-elena",
+          "m-theo"
+        ]
+      }
+    },
+    {
+      "id": "e-17",
+      "payerId": "m-theo",
+      "description": "Replacement key copies",
+      "amountCents": 1875,
+      "paidOn": "2026-11-09",
+      "category": "other",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-priya",
+          "m-marcus",
+          "m-jun",
+          "m-elena",
+          "m-theo"
+        ]
+      }
+    },
+    {
+      "id": "e-18",
+      "payerId": "m-elena",
+      "description": "Weekly groceries",
+      "amountCents": 11312,
+      "paidOn": "2026-11-14",
+      "category": "groceries",
+      "split": {
+        "kind": "equal",
+        "memberIds": [
+          "m-priya",
+          "m-marcus",
+          "m-jun",
+          "m-elena",
+          "m-theo"
+        ]
+      }
+    }
+  ],
+  "settlements": [
+    {
+      "id": "s-01",
+      "fromId": "m-jun",
+      "toId": "m-priya",
+      "amountCents": 65000,
+      "settledOn": "2026-09-05"
+    },
+    {
+      "id": "s-02",
+      "fromId": "m-marcus",
+      "toId": "m-priya",
+      "amountCents": 125000,
+      "settledOn": "2026-10-20"
+    }
+  ]
+}
