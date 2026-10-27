@@ -69,7 +69,10 @@ Issues and tests cite these by number.
 - **R2** An equal split distributes the amount so that the shares differ by at most one
   cent and sum exactly to the amount; the extra cents go to the members earliest in the list.
 - **R3** An exact split's shares must sum exactly to the amount.
-- **R4** A percent split's percents must be integers and sum to exactly 100.
+- **R4** A percent split's percents must be integers and sum to exactly 100. Each share is
+  the floor of its exact percentage, then the leftover cents go to the largest fractional
+  remainders (ties to the member earliest in the list); the shares always sum exactly to
+  the amount.
 - **R5** The payer may or may not be in the split.
 - **R6** Balances are derived, never stored: (paid) - (owed) + (settlements received) -
   (settlements paid), per member; across the house they sum to zero.

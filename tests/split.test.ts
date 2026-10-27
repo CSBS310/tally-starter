@@ -71,14 +71,26 @@ describe('sharesFor: percent splits (R4)', () => {
     expect(sumCents(shares.values())).toBe(1000);
   });
 
-  it('rounds each share to the nearest cent', () => {
-    // $10.01 at 33/33/34: 330.33 -> 330, 330.33 -> 330, 340.34 -> 340
+  it('gives the leftover cent to the largest remainder', () => {
+    // $10.01 at 33/33/34: floors are 330/330/340, and 34% has the largest
+    // remainder (.34), so it receives the missing cent.
     const shares = sharesFor({
       amountCents: 1001,
       split: { kind: 'percent', shares: [{ memberId: 'a', percent: 33 }, { memberId: 'b', percent: 33 }, { memberId: 'c', percent: 34 }] },
     });
-    expect([...shares.values()]).toEqual([330, 330, 340]);
-    expect(sumCents(shares.values())).toBe(1000);
+    expect([...shares.values()]).toEqual([330, 330, 341]);
+    expect(sumCents(shares.values())).toBe(1001);
+  });
+
+  it('distributes two leftover cents by largest remainder, then list order', () => {
+    // $10.02 at 33/33/34: 34% takes the first cent, then the tie between the
+    // two 33% shares goes to the earlier member.
+    const shares = sharesFor({
+      amountCents: 1002,
+      split: { kind: 'percent', shares: [{ memberId: 'a', percent: 33 }, { memberId: 'b', percent: 33 }, { memberId: 'c', percent: 34 }] },
+    });
+    expect([...shares.values()]).toEqual([331, 330, 341]);
+    expect(sumCents(shares.values())).toBe(1002);
   });
 
   it('rejects percents that do not add up to 100', () => {

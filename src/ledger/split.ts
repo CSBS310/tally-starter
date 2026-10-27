@@ -68,6 +68,20 @@ function percentShares(amountCents: number, shares: readonly PercentShare[]): Ma
   if (total !== 100) {
     throw new DomainError(ErrorCodes.INVALID_SPLIT, `percents must add up to 100, got ${total}`);
   }
-  // Each share rounds to the nearest cent.
-  return new Map(shares.map((s) => [s.memberId, Math.round((amountCents * s.percent) / 100)]));
+  // R4: floor each exact share, then give the leftover cents to the largest
+  // fractional remainders. Ties go to the member earliest in the list, so the
+  // result is deterministic and always sums to the expense amount.
+  const exact = shares.map((s) => amountCents * s.percent);
+  const amounts = exact.map((numerator) => Math.floor(numerator / 100));
+  const remainders = exact.map((numerator) => numerator % 100);
+  let leftover = amountCents - sumCents(amounts);
+  const order = remainders
+    .map((remainder, index) => ({ remainder, index }))
+    .sort((a, b) => b.remainder - a.remainder || a.index - b.index);
+  for (const { index } of order) {
+    if (leftover === 0) break;
+    amounts[index] += 1;
+    leftover -= 1;
+  }
+  return new Map(shares.map((s, index) => [s.memberId, amounts[index]]));
 }
